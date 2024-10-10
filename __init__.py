@@ -1,11 +1,12 @@
 import requests,hashlib
 from collections import OrderedDict
 
-def uploadFile(file:bytes,token,type=""):
+def uploadFile(file:bytes,token:str,type=""):
     """上传文件函数
 
     Args:
         file (bytes):byte类型的文件
+        token (str):用户token
         type (str):文件后缀
 
     Returns:
@@ -21,7 +22,7 @@ def uploadFile(file:bytes,token,type=""):
     ret=requests.post("https://"+uhost,files=params).json()
     return ret
 
-def downloadFile(key):
+def downloadFile(key:str):
     """下载文件函数
 
     Args:
